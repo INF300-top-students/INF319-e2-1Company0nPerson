@@ -1,0 +1,28 @@
+@startuml
+class Company {
+- String name
++ <<Create>> Company()
++ <<Create>> Company(String)
++ String getName()
++ void setName(String)
++ int getNumberOfEmployees()
++ void hire(Person,double)
++ void dismiss(Person)
++ double payroll()
+}
+class Person {
+- String name
+- String surname
+- double salary
++ <<Create>> Person()
++ <<Create>> Person(String,String)
++ String getName()
++ void setName(String)
++ String getSurname()
++ void setSurname(String)
+# void setSalary(double)
++ double getSalary()
+}
+
+Company --> "0..n" Person
+@enduml
